@@ -1,0 +1,22 @@
+{
+  "name": "fondfingers",
+  "version": "1.0.0",
+  "description": "stock audio site for content creators that focuses on African themed music.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayvvss/fondfingers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dayvvss/fondfingers/issues"
+  },
+  "homepage": "https://github.com/dayvvss/fondfingers#readme",
+  "dependencies": {
+    "react-bootstrap": "^2.5.0"
+  }
+}
