@@ -18,7 +18,7 @@ function Controls(props) {
         <Icon  icon={props.isPlaying ? PauseCircleIcon : PlayCircleIcon }/>
     </div>
     <div className="skip me-1">
-        <Icon size="2x" icon={Forward10Icon}/>
+        <Icon  icon={Forward10Icon}/>
     </div>
 </div>
     )

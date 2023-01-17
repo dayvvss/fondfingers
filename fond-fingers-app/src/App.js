@@ -4,6 +4,7 @@ import Home from './components/Home';
 import MusicSection from './components/musicComponents/MusicSection';
 import NavBar from './components/NavBar';
 import WhatYouGet from './components/WhatYouGet';
+import Categories from './components/Categories';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
      <NavBar/>
      <Home/>
      <WhatYouGet/>
+     <Categories/>
      <MusicSection/>
     </>
    

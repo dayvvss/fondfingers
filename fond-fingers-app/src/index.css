@@ -2,6 +2,8 @@
 :root{
   --paper-bg:#ffffee;
   --dark-brown:#231E18;
+  --light-brown:rgb(165, 81, 42);
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -10,7 +12,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--dark-brown);
+  /* background-color: var(--dark-brown); */
+  box-sizing: border-box;
+  overflow-x: hidden;
   
 }
 
@@ -50,6 +54,7 @@ border: none !important;
 box-shadow: none !important;
 
 }
+
 .outline-brown{
   outline: solid 1px !important ;
 }
@@ -60,9 +65,148 @@ box-shadow: none !important;
   height: 155px !important;
   justify-content: center !important;
 }
+
+.progressBar{
+  appearance: none !important;
+  background: var(--paper-bg) !important;
+  border-radius: 10px !important;
+  position: relative;
+  width: 100%;
+  height: 11px;
+  outline: none;
+}
+/* For Safari */
+.progressBar::-webkit-slider-runnable-track{
+
+  background: var(--paper-bg) !important;
+  border-radius: 10px !important;
+  position: relative;
+  width: 100%;
+  height: 11px;
+  outline: none;
+}
+
+/* For mozilla firefox */
+.progressBar::-moz-range-track{
+  background-color: var(--paper-bg) !important;
+  height: 15px !important; 
+  outline: none !important;
+  position: relative !important;
+}
+
+.progressBar::-moz-focus-outer{
+border:0;
+}
+.progressBar::before{
+  content:'' !important;
+  height: 11px !important;
+  width: 50% !important;
+  background-color: var(--light-brown) !important; 
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2 !important;
+  cursor: pointer;
+}
+/* Seek Backgorund for Mozilla */
+
+.progressBar::-moz-range-progress{
+  content:'' !important;
+  height: 11px !important;
+  width: 50% !important;
+  background-color: var(--light-brown) !important; 
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2 !important;
+  cursor: pointer;
+}
+
+.progressBar::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--dark-brown) !important;
+  cursor: pointer;
+  position: relative;
+  margin: -2px;
+  z-index: 3;
+  box-sizing: border-box;
+}
+.progressBar:active::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  background: teal !important;
+  transform: scale(1.2);
+}
+.progressBar::-moz-range-thumb{
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: transparent;
+  background-color: var(--dark-brown) ;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  box-sizing: border-box;
+}
+.progressBar:active::-moz-range-thumb {
+  -webkit-appearance: none;
+  background: teal !important;
+  transform: scale(1.2);
+
+}
+.bg-slant::after{
+  content: '';
+  position: absolute !important;
+  top: 150%;
+  bottom: 0;
+  left: 0;
+  height: 50vw;
+  background-color: var(--paper-bg);
+  border: solid 50px var(--paper-bg);
+  border-width: 1000px;
+  overflow-x: hidden;
+  z-index: -1;
+  transform: rotateX(30deg);
+
+}
+
+.large-icon{
+  font-size: 4rem !important;
+}
+.scale-on-hover{
+  transition: ease-out;
+}
+.scale-on-hover:hover{
+  transform: scale(1.05);
+  transition: ease-in  .5s ;
+}
+.tags{
+  width: max-content;
+}
+.tag-box{
+  gap: 10px;
+}
+
+
+
+/* Breakpoints */
 @media (max-width:1000px) {
   .bg-light-paper-sm{
     background-color: var(--paper-bg);
+  }
+  
+}
+@media (max-width:576px) {
+  .bg-slant{
+    display: none;
   }
   
 }
