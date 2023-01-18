@@ -1,16 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
+import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import PauseCircleIcon from '@mui/icons-material/PauseCircle';
+import AddIcon from '@mui/icons-material/Add';
 import Replay10Icon from '@mui/icons-material/Replay10';
 import Icon from '@mui/material/Icon';
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 // import {faPlayCircle,faForward,faBackward, faPauseCircle} from "@fortawesome/free-solid-svg-icons"
-import { ProgressBar } from 'react-bootstrap';
+import ShoppingCart from '@mui/icons-material/ShoppingCart';
 
 
 export default function SongDetails(props) {
@@ -20,6 +22,16 @@ export default function SongDetails(props) {
   const background = useState(props.img_src)
   // const [background,setBackground] = useState('')
   // setBackground(props.img_src)
+  const style = {
+    width:'100%',
+    height:'auto',
+    backgroundSize:'cover',
+    background:`url(${props.img_src})`
+    
+  }
+  const cardStyling ={
+    width:'280px',
+  }
   
   
  
@@ -39,27 +51,47 @@ export default function SongDetails(props) {
     // </div>
 
     
-      <Row className='d-flex flex-row align-items-center p-4'>
-        <Col style={{backgroundImage:`url(${background})`}} className='col-4 col-lg-1 d-flex flex-row p-2' >
-        {/* <img src={props.img_src} className=" img-thumbnail  " alt=""  /> */}
-        <div className="play me-1"  onClick={props.play} >
-        <Icon size="2x" icon={props.isPlaying ? PauseCircleIcon : PlayCircleIcon }/>
-         </div>
-        </Col>
-        <Col lg={8} className='d-flex justify-space-between flex-wrap align-items-center'>
-            <p>{props.songs.title}</p>
-            <p className='mx-2'> by </p>
-            <p className='me-3'>{props.songs.artist }</p>
-            <input type="range" name="range" value={props.percentage} className='form-range w-100' step={0.01} min="0" max={100} onChange={props.onChange} id="customRange1" />
+      
+        <Col lg={3} md={5} xs={9} className='d-flex  flex-wrap align-items-center pb-4 '>
+          <Card className='mb-5 pb-4 border-0' style={cardStyling}>
+                <div style={style} className='' >
+                 {/* <img src={props.img_src} className=" img-thumbnail  " alt=""  /> */}
+                  <div className="play  my-5 text-center"  onClick={props.play} >
+                  
+                      {props.isPlaying ? <PauseCircleIcon className='text-light large-icon'/> : <PlayCircleIcon fontSize='large' className='text-light large-icon' /> }
 
-            <p>{props.currenttime}</p>
+                      
+                      {/* <Icon  icon={props.isPlaying ? PauseCircleIcon : PlayCircleIcon }/> */}
+                  </div>
+                </div>
+                <div className='d-flex flex-row justify-content-center mt-3'>
+                  <p className=''>{props.songs.title}</p>
+                  <p className=''>-</p>
+                  <p className='me-3'>{props.songs.artist }</p>
+                </div>
+                <div className="d-flex flex-wrap mx-3 tag-box">
+                   <div className="bg-secondary bg-opacity-25 p-1 d-flex align-items-center  tags"><p className='mb-0'> Song tag</p></div>
+                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> Song tag1</p></div>
+                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> Song tag2</p></div>
+                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> Song tag3</p></div>
+                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> Song tag4</p></div>
+                </div>
+               
+                <div className='d-flex flex-row justify-content-end'>
+                  {/* <input type="range" name="range" defaultValue={0} className='progressBar w-100' step={0.01} min="0" max={100} onChange={props.onChange} id="customRange1" /> */}
+                  <p className="justify-content-start mb-0 w-auto">{props.time}</p>
+                  <p className='justify-content-end flex-wrap mb-0'>{ props.duration}</p>
+                </div>
+                <Button className='w-auto bg-dark mx-3'>
+                  <AddIcon  />
+                </Button >
+          </Card>
+            
            
-       
-
         </Col>
-      </Row>
+  
     
+
     
   )
 }
-

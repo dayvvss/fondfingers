@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row'
 import heroImg from './../img/african.png'
 import heroImg1 from './../img/african-1.png'
 import heroImg2 from './../img/african-2.png'
+import heroImg3 from './../img/african-3.jpeg'
 import zigzag from './../img/zigzag.png'
 
 
@@ -13,8 +14,8 @@ export default function Home() {
 
   return (
     <>
-    <Row className='d-flex flex-lg-row flex-column p-lg-5 p-md-3 p-sm-4 justify-content-center m-2 m-md-1 m-lg-5 h-100 '>
-      <Col lg="5" md='12' sm='11' className='p-lg-5 p-md-5 p-4 justify-content-center' >
+    <Row className='d-flex flex-lg-row bg-dark-brown flex-column p-lg-5 p-md-3 p-sm-4 justify-content-center h-100 '>
+      <Col lg="6" md='12' xs={11} className='p-lg-5 mt-lg-5 mt-md-5 mt-5  p-md-5 p-4 justify-content-center' >
         <h1 className='text-paper'>
         Stock Audio for African Content for Creators
         </h1>
@@ -23,15 +24,15 @@ export default function Home() {
         </p>
         <button className="px-3 nav-btn">Learn More</button>
       </Col>
-      <Col lg="7" md="12" sm ="10" xs className='p-0 p-md-4 justify-content-center ' >
+      <Col lg="6" md="12" sm ="9" xs className='p-0 p-md-4 justify-content-center ' >
         <img src={heroImg} 
         className='w-100'
         style={{maxWidth:'580px',minWidth:'300px'}}
-        alt= "black woman in sun glasses" srcSet={ `${heroImg} 1200w, ${heroImg1} 768w, ${heroImg2} 400w `}/>
+        alt= "black woman in sun glasses" srcSet={ `${heroImg} 1200w, ${heroImg1} 768w, ${heroImg3} 400w `}/>
       </Col>
-
+ <img src={zigzag} alt="" width={'100%'} className=' mt-5'/>
     </Row>
-    <img src={zigzag} alt="" width={'100%'} className=' mt-5'/>
+   
     </>
   )
 }

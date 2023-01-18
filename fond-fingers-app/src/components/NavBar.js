@@ -1,4 +1,6 @@
 import React from 'react';
+import Cart from '@mui/icons-material/ShoppingCart'
+
 // import logo from './Fond_fingers_logo_white_small.png'
 import logo from './../ff-gold.png'
 import logo_small from './../ff-gold-small.png'
@@ -17,7 +19,7 @@ export default function NavBar() {
 
     
    
-        <Navbar  className='bg-dark-brown' expand="lg">
+        <Navbar  fixed = 'top' className='bg-dark-brown' expand="lg">
           <Container>
             <Navbar.Brand href="#home">
               <img src={logo} alt="navbar logo" className='' height={'60'} srcSet={`${logo_small} 300w`} />
@@ -42,6 +44,10 @@ export default function NavBar() {
                 
               </Nav>
             </Navbar.Collapse>
+            <div className="nav-btn p-1 bg-light-paper">
+              <Cart className=''/><span className="text-danger">0</span>
+            </div>
+            
           </Container>
         </Navbar>
       );
