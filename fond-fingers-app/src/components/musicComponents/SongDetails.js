@@ -12,16 +12,12 @@ import Replay10Icon from '@mui/icons-material/Replay10';
 import Icon from '@mui/material/Icon';
 // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 // import {faPlayCircle,faForward,faBackward, faPauseCircle} from "@fortawesome/free-solid-svg-icons"
-import ShoppingCart from '@mui/icons-material/ShoppingCart';
 
 
 export default function SongDetails(props) {
   
   const [count,setCount] = useState(0)
 
-  const background = useState(props.img_src)
-  // const [background,setBackground] = useState('')
-  // setBackground(props.img_src)
   const style = {
     width:'100%',
     height:'auto',
@@ -70,11 +66,10 @@ export default function SongDetails(props) {
                   <p className='me-3'>{props.songs.artist }</p>
                 </div>
                 <div className="d-flex flex-wrap mx-3 tag-box">
-                   <div className="bg-secondary bg-opacity-25 p-1 d-flex align-items-center  tags"><p className='mb-0'> Song tag</p></div>
-                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> Song tag1</p></div>
-                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> Song tag2</p></div>
-                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> Song tag3</p></div>
-                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> Song tag4</p></div>
+                   <div className="bg-secondary bg-opacity-25 p-1 d-flex align-items-center  tags"><p className='mb-0'> {props.genre}</p></div>
+                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> {props.mood}</p></div>
+                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> {props.vocal}</p></div>
+                   <div className="bg-secondary bg-opacity-25 p-1 align-center tags"><p className='mb-0'> {props.tempo}</p></div>
                 </div>
                
                 <div className='d-flex flex-row justify-content-end'>

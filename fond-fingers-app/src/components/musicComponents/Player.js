@@ -97,11 +97,14 @@ const onChange = (e)=>{
         
             <audio ref={audioEl}  onTimeUpdate={getDuration} src={props.music}></audio>
                 <SongDetails songs={props.songs} 
-                img_src={props.img_src} 
+                img_src={props.img_src}
                 isPlaying={isPlaying} 
                 setIsplaying={setIsplaying}
                 duration={duration}
-               
+               genre={props.genre}
+               mood={props.mood}
+               vocal= {props.vocal}
+               tempo= {props.tempo}
                 onChange={onChange}
                 play={play}
                 percentage={percentage}

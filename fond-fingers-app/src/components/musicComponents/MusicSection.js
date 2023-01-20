@@ -5,81 +5,81 @@ import Container from 'react-bootstrap/Container'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MusicSection() {
-  const [tags,setTags] = useState([
-    // Genre
-    {
-      "genres": [
-        "Pop",
-        "Rock",
-        "Hip-hop",
-        "Electronic",
-        "Jazz",
-        "Blues",
-        "Folk",
-        "Country",
-        "R&B/Soul",
-        "Latin",
-        "Classical",
-        "Reggae",
-        "Funk",
-        "Metal",
-        "Punk",
-        "Gospel/Christian",
-        "Grunge",
-        "Bluegrass",
-        "World Music"
-    ]
-  },
-  { //Moods
-    "moods": [
-        "Upbeat",
-        "Mellow",
-        "Sad",
-        "Happy",
-        "Energetic",
-        "Romantic",
-        "Dramatic",
-        "Atmospheric",
-        "Intense",
-        "Relaxing",
-        "Funky",
-        "Sensual",
-        "Mysterious",
-        "Suspenseful",
-        "Dreamy"
-    ]
-},
-// Song Tempos
+  const genres = {
+        1:"Pop",
+        2:"Amapiano",
+        3:"Hip-hop",
+        4:"Electronic",
+        5:"Jazz",
+        6:"Blues",
+        7:"Folk",
+        8:"African",
+        9:"R&B/Soul",
+        10:"Latin",
+        11:"Classical",
+        12:"Reggae",
+        13:"Funk",
+        14:"Metal",
+        15:"Punk",
+        16:"Gospel/Christian",
+        17:"Grunge",
+        18:"Bluegrass",
+        19:"World Music"
+  }
+  // Vocals
+const vocals =
 {
-  "tempos": [
-      {"Fast": "130-160 BPM"},
-      {"Medium": "90-120 BPM"},
-      {"Slow": "60-80 BPM"}
-  ]
-},
-// Vocals
-{
-  "vocals":[
-    "male",
-    "female",
-    "no-vocals"
-  ]
+    1:"male",
+    2:"female",
+    3:"no-vocals" 
 }
+// Moods
+const moods ={
+        1:"Upbeat",
+        2:"Mellow",
+        3:"Sad",
+        4:"Happy",
+        5:"Energetic",
+        6:"Romantic",
+        7:"Dramatic",
+        8:"Atmospheric",
+        9:"Intense",
+        10:"Relaxing",
+        11:"Funky",
+        12:"Sensual",
+        13:"Mysterious",
+        14:"Suspenseful",
+        15:"Dreamy"
 
+}
+ const tempos = {
+  // Song Tempos
+      Fast: "130-160 BPM",
+      Medium: "90-120 BPM",
+      Slow: "60-80 BPM"
+  
 
-  ])
+ } 
   const [songs,setSongs] = useState([
     {
       title:"Song 1",
       artist:"Davies ",
       img_src:"/songart/img-1.jpg",
-      src:"/music/african marimba.mp3"
+      src:"/music/african marimba.mp3",
+      genre:genres[7],
+      tempo:tempos.Fast,
+      mood:moods[5],
+      vocal:vocals[3]
     },
     {
       title:"Song 2",
       artist:"Wakili",
       src:"/music/afrostyle.m4a",
       img_src:"/songart/img-2.jpg ",
+      genre:genres[1],
+      tempo:tempos.Medium,
+      mood:moods[9],
+      vocal:vocals[3],
 
     },
     {
@@ -87,6 +87,10 @@ function MusicSection() {
       artist:"Siaya",
       src:"/music/all over the place demo.m4a ",
       img_src:"/songart/img-3.jpg ",
+      genre:genres[3],
+      tempo:tempos.Medium,
+      mood:moods[8],
+      vocal:vocals[3]
 
     },
     {
@@ -94,23 +98,29 @@ function MusicSection() {
       artist:"Davies ",
       src:"/music/all in a days work.mp3",
       img_src:"/songart/img-4.jpg ",
+      genre:genres[7],
+      tempo:tempos.Medium,
+      mood:moods[1],
+      vocal:vocals[3]
+
       
     }
   ])
 
-  const [currentSongIndex,setCurrentSongIndex] = useState(0)
-  const [nexSongIndex,setNextSongIndex] = useState(currentSongIndex + 1)
 
-const songList = songs.map((song,index)=>{
-  console.log(song.src)
+  const songList = songs.map((song,index)=>{
+  
 
   return(
     <Player key={index}
-   index ={index}
-      nexSongIndex={nexSongIndex}
+      index ={index}
       songs={song}
       img_src={song.img_src}
       music= {song.src}
+      genre={song.genre}
+      mood={song.mood}
+      tempo={song.tempo}
+      vocal={song.vocal}
     />
   )
 
@@ -125,18 +135,7 @@ return(
   </div>
   
 )
-  // return (
-  //   <div className="App ">
-  //     <Player 
-  //     currentSongIndex = {currentSongIndex}
-  //     setCurrentSongIndex={setCurrentSongIndex}
-  //     nexSongIndex={nexSongIndex}
-  //     songs={songs[currentSongIndex]}
-  //     img_src={songs[currentSongIndex].img_src}
-  //     music= {songs[currentSongIndex].src}
-  //     />
-  //   </div>
-  // );
+
 }
 
 export default MusicSection;
